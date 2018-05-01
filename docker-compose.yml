@@ -2,8 +2,12 @@ version: "3"
 services:
 
   mongodb:
+    build: .
     container_name: mongodb
-    image: mongo:$MONGO_VERSION
+#    image: mongo:$MONGO_VERSION
+    command: ["mongod", "-f", "/etc/mongod.conf"]
+#    volumes:
+#      - mongod.conf:/etc/mongod.conf    
     ports:
       - "27017:27017"
     
