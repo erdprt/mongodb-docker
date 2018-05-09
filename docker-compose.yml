@@ -6,10 +6,9 @@ services:
     container_name: mongodb
 #    image: mongo:$MONGO_VERSION
     command: ["mongod", "-f", "/etc/mongod.conf"]
-#    volumes:
-#      - mongod.conf:/etc/mongod.conf    
+    volumes:
+      #- mongod.conf:/etc/mongod.conf
+      #- ./data/db/:/data/db  
+       - ./data/log/:/var/log/mongodb/
     ports:
       - "27017:27017"
-    
-
-
